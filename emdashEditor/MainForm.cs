@@ -92,7 +92,8 @@ namespace emdashEditor
 
             highlightTimer = new Timer();
             highlightTimer.Interval = 500; // 500ms delay
-            highlightTimer.Tick += (s, args) => {
+            highlightTimer.Tick += (s, args) =>
+            {
                 HighlightEmDashes();
                 highlightTimer.Stop();
                 highlightTimer.Dispose();
@@ -248,7 +249,8 @@ namespace emdashEditor
                     // Reset title after 4 seconds
                     Timer timer = new Timer();
                     timer.Interval = 4000;
-                    timer.Tick += (s, args) => {
+                    timer.Tick += (s, args) =>
+                    {
                         this.Text = "Em-Dash Text Converter";
                         timer.Stop();
                         timer.Dispose();
@@ -264,7 +266,8 @@ namespace emdashEditor
 
                     Timer timer = new Timer();
                     timer.Interval = 2000;
-                    timer.Tick += (s, args) => {
+                    timer.Tick += (s, args) =>
+                    {
                         this.Text = "Em-Dash Text Converter";
                         timer.Stop();
                         timer.Dispose();
@@ -383,7 +386,8 @@ namespace emdashEditor
 
                     Timer timer = new Timer();
                     timer.Interval = 1000;
-                    timer.Tick += (s, args) => {
+                    timer.Tick += (s, args) =>
+                    {
                         copyButton.Text = originalText;
                         copyButton.BackColor = SystemColors.Control;
                         timer.Stop();
@@ -404,5 +408,15 @@ namespace emdashEditor
             }
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout aboutForm = new frmAbout();
+            aboutForm.ShowDialog(this);
+        }
     }
 }
